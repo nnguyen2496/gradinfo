@@ -19,5 +19,5 @@ test_that("readStudentInfo output a dataframe with columns of correct format",{
   expect_equal(is.logical(readStudentInfo("2000-01.txt", 2001)$Clark.Fellow), TRUE)
   expect_equal(is.character(readStudentInfo("2000-01.txt", 2001)$Latin.honor), TRUE)
   expect_equal(is.character(readStudentInfo("2000-01.txt", 2001)$degree), TRUE)
-  expect_equal(is.character(readStudentInfo("2000-01.txt", 2001)$degree), TRUE)
+  expect_equal(is.numeric(readStudentInfo("2000-01.txt", 2001)$Grad.Year), TRUE)
 })
