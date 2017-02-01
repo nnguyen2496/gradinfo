@@ -13,7 +13,7 @@
 #'                         of each department.
 #' }
 #'
-#' @param format This argument has three values \code{("numeric", "timeseries", "distribution")}
+#' @param format This argument has three values \code{numeric, timeseries, distribution}
 #' \itemize{
 #'  \item \strong{numeric}: returns a data frame containing relevant summary statistics
 #'  \item \strong{timeseries}: generates graphical summary that displays changes of the interested statistics over time.
