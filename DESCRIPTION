@@ -1,0 +1,24 @@
+Package: gradinfo
+Type: Package
+Title: Statistical summary of Williams College's graduating classes since 2001
+Version: 0.1.0
+Author: person("Nam", "Nguyen", email = "ntn3@williams.edu", role = c("aut", "cre"))
+Maintainer: Nam Nguyen <ntn3@williams.edu>
+Description:
+  This package extracts data on Williams College's graduating classes in the most recent 15 years
+  from manually downloaded text files, organize them into a single data frame and performs some
+  standard statistical and graphical summary of the dataset.
+LazyData: TRUE
+Imports: lubridate,
+        stringr,
+        dplyr,
+        ggplot2,
+        reshape2,
+        gender,
+        gridExtra
+Suggests: tidyverse,
+          knitr,
+          testthat,
+          rmarkdown,
+RoxygenNote: 5.0.1
+VignetteBuilder: knitr
