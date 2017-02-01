@@ -130,12 +130,8 @@ graduate_handler <- function(format){
   else stop("Invalid format argument!")
 }
 
+# Display numeric or graphical summary on the distribution of Latin honors
 latin_handler <- function(format){
-  # Year
-  # Count the number of summa
-  # Count the number of magna
-  # Count the number of cum laude
-  # Count the number of no-latin honors
   summary <- matrix(nrow = 16, ncol = 5)
   year <- 2001
   for (i in 1:16){
@@ -168,6 +164,9 @@ latin_handler <- function(format){
   else stop("Invalid format argument")
 }
 
+# @parameteter: year: the graduating year of students receiving Latin honors
+# @return: a data frame containing the numbers of students receiving Summa Cum Laude, Magna Cum Laude, Cum Laude and no Latin honors 
+#          for each year between 2001 and 2016
 count_honors <- function(year){
   result <- c(nrow(filter(williams_grad, Latin.honor == "summa", Grad.Year == year)),
               nrow(filter(williams_grad, Latin.honor == "magna", Grad.Year == year)),
@@ -177,11 +176,8 @@ count_honors <- function(year){
   return(result)
 }
 
+# Display numeric or graphical summary on the number of majors and the distribution of students by among departments over time
 dept_handler <- function(format){
-  # numeric year, major, raw number, percentage of total graduating students
-  # timeseries: change in the number of majors over time
-  # Distribution?
-  # Pie chart? (top 5 most popular department (by percentage))
   if (format == "numeric") {
     return(majors)
   }
@@ -206,9 +202,8 @@ dept_handler <- function(format){
   }
 }
 
+# Display numeric or graphical summary of the gender ratio by year or by department
 gender_handler <- function(format){
-  # Gender Ratio by Year
-  # Latin honors (breakdown by gender)
   male <- numeric()
   female <- numeric()
   department <- character()
@@ -222,6 +217,7 @@ gender_handler <- function(format){
 
 
   for (i in Dept){
+    # Create a data frame that contains numbers of males/females by department and the corresponding gender ratios
     department <- append(department, rep(i, 16))
     for (j in 2001:2016){
       nmale <- nrow(filter(williams_grad, Grad.Year == j, Gender == "male", grepl(i, Dept.honor)))
@@ -239,6 +235,7 @@ gender_handler <- function(format){
   if (format == "numeric"){
     return(summary)
   } else if (format == "timeseries"){
+    # Create a data frame that contains the overall gender ratio for each year
     males <- numeric()
     females <- numeric()
     for (i in 2001:2016){
