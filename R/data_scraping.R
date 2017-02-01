@@ -33,7 +33,7 @@ data_scraping <- function(){
 
   gender <- gender(williams_grad$First.Name, method = "kantrowitz")
   gender$gender[which(gender$gender == "either" | is.na(gender$gender))] <- sample(c("male","female"), 1)
-  gender <- gender[c(-1066, -7002),]
+  gender <- gender[c(-1066, -7002),] # Remove duplicated lines 
   williams_grad <- cbind(williams_grad, Gender = gender$gender)
   devtools::use_data(williams_grad, pkg = "data", overwrite = TRUE)
 }
