@@ -32,7 +32,9 @@
 #' statsummay("depertment", "distribution") # Return a bar chart showing top 5 most popular department (ranked by percentage of total students
 #'                                            majoring in the department)
 #'
-#' @import ggplot2 reshape2 dplyr gridExtra
+#' @import ggplot2 reshape2 gridExtra
+#' @importFrom dplyr filter
+#' @importFrom dplyr mutate
 #' @export
 statsummary <- function(type = "undergrad", format = "timeseries"){
   # Load data
