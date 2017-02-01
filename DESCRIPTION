@@ -13,12 +13,12 @@ Imports: lubridate,
         stringr,
         dplyr,
         ggplot2,
-        gender,
-        gridExtra
+        gender
 Suggests: tidyverse,
           reshape2,
           knitr,
           testthat,
           rmarkdown,
+          gridExtra
 RoxygenNote: 5.0.1
 VignetteBuilder: knitr

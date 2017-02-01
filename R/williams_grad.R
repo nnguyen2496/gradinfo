@@ -5,7 +5,8 @@
 #'
 #' @format A data frame with 9 variables
 #' \itemize{
-#'   \item \strong{Name}: Name of students
+#'   \item \strong{First.Name}: First names of students
+#'   \item \strong{Middle.and.Last.Name}: Middle names and last names of students
 #'   \item \strong{Dept.Honor}: Name of the department that awarded academic honor to the student (NA if
 #'                      there is none)
 #'   \item \strong{Dept.Honor.lv}: The degree of department honor awared to the student, either "highest"
@@ -25,6 +26,7 @@
 #'                    \item BA: Bachelor of Art
 #'                  }
 #'   \item \strong{Grad.Year} = Graduation year of student
+#'   \item \strong{Gender} = Gender of student
 #'   }
 #' @docType data
 #' @name williams_grad
